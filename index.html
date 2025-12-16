@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube to LinkedIn Repurposer - $5 per Video</title>
+    <meta name="description" content="Turn your YouTube videos into professional LinkedIn posts in under 2 hours. Only $5 per video.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+
+        .main-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .price {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            opacity: 0.7;
+            font-size: 0.8em;
+        }
+
+        .special-offer {
+            background: #ffd700;
+            color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .features {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .features li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .form-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .help-text {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #28a745;
+            margin-top: 15px;
+        }
+
+        .steps {
+            background: #e3f2fd;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .steps h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .steps ol {
+            padding-left: 25px;
+        }
+
+        .steps li {
+            padding: 8px 0;
+            font-size: 1.1em;
+        }
+
+        .examples {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .examples h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .sample-output {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+            font-family: Georgia, serif;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            margin: 15px 0;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 30px 20px;
+            opacity: 0.9;
+        }
+
+        .alert {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            border: 2px solid #28a745;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .main-card {
+                padding: 25px 20px;
+            }
+
+            .price {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 YouTube to LinkedIn Repurposer</h1>
+            <p class="tagline">Stop wasting hours on content repurposing</p>
+            <p>Professional LinkedIn posts from your YouTube videos in under 2 hours</p>
+        </header>
+
+        <div class="main-card">
+            <h2 style="color: #667eea; margin-bottom: 20px;">Turn Your Videos Into LinkedIn Gold</h2>
+
+            <p style="font-size: 1.1em; margin-bottom: 20px;">
+                Got YouTube content but struggling to repurpose it for LinkedIn? 
+                I'll manually create professional LinkedIn posts from your videos.
+            </p>
+
+            <ul class="features">
+                <li><strong>Engaging hook</strong> that stops the scroll</li>
+                <li><strong>3-5 key insights</strong> formatted as bullet points</li>
+                <li><strong>Professional emojis</strong> and formatting</li>
+                <li><strong>Relevant hashtags</strong> for maximum reach</li>
+                <li><strong>Perfect length</strong> (1200-1500 characters)</li>
+                <li><strong>Ready to copy & paste</strong> directly to LinkedIn</li>
+            </ul>
+
+            <div class="price-box">
+                <div class="original-price">Regular: $10/video</div>
+                <div class="price">$5</div>
+                <p style="font-size: 1.2em;">per video</p>
+                <p style="opacity: 0.9; margin-top: 10px;">⚡ Delivered in under 2 hours (usually 30 minutes)</p>
+            </div>
+
+            <div class="special-offer">
+                🔥 LAUNCH SPECIAL: First 10 customers get 5 videos for ₹1500 ($18) - Save 60%! 🔥
+            </div>
+
+            <div class="examples">
+                <h3>📊 What You'll Get:</h3>
+                <p><strong>Before:</strong> A 15-minute YouTube video about productivity</p>
+                <p><strong>After:</strong></p>
+                <div class="sample-output">🚀 Ever wonder why some people achieve 10x more in the same 24 hours?
+
+I spent 6 months studying ultra-productive founders. Here are the 5 habits that changed everything:
+
+• **Time blocking mastery:** They don't schedule tasks—they schedule energy levels for specific work types
+• **The 2-minute rule:** If it takes less than 2 minutes, do it NOW (eliminates decision fatigue)
+• **Batch similar tasks:** Email once at 2pm, meetings only on Tuesday/Thursday
+• **Say NO ruthlessly:** Every yes to something is a no to something else
+• **Deep work blocks:** 90-min focused sessions > 8 hours of distracted work
+
+💡 The difference? They optimize for energy, not time.
+
+👉 Watch my full breakdown: [YouTube link]
+
+#Productivity #TimeManagement #Entrepreneurship #WorkSmart</div>
+            </div>
+
+            <div class="steps">
+                <h3>📝 How It Works:</h3>
+                <ol>
+                    <li><strong>Fill out the form below</strong> with your video URL</li>
+                    <li><strong>Pay ₹415 ($5)</strong> via Razorpay (instant)</li>
+                    <li><strong>Paste payment confirmation</strong> in the form</li>
+                    <li><strong>Get your LinkedIn post via email</strong> within 2 hours</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ORDER FORM -->
+        <div class="main-card">
+            <h2 style="color: #667eea; margin-bottom: 25px; text-align: center;">📋 Order Your LinkedIn Post</h2>
+
+            <form id="orderForm" class="form-section">
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    <div class="help-text">You'll receive your LinkedIn post here</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="youtubeUrl">YouTube Video URL *</label>
+                    <input type="url" id="youtubeUrl" name="youtubeUrl" required placeholder="https://www.youtube.com/watch?v=...">
+                    <div class="help-text">Paste the full YouTube link</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="deliveryMethod">How would you like to receive it? *</label>
+                    <select id="deliveryMethod" name="deliveryMethod" required>
+                        <option value="">-- Select an option --</option>
+                        <option value="mdhxhameed@gmail.com">Just send me the text via email</option>
+                        <option value="linkedin">Post it to my LinkedIn (I'll share access)</option>
+                    </select>
+                </div>
+
+                <div class="alert">
+                    <strong>⚡ PAYMENT STEP:</strong><br>
+                    Click the button below to pay ₹415 ($5) via Razorpay, then come back and paste your payment ID in the next field.
+                </div>
+
+                <a href="https://razorpay.me/@Hameed12346/415" target="_blank" class="btn btn-secondary">
+                    💳 Pay ₹415 via Razorpay →
+                </a>
+
+                <div class="form-group" style="margin-top: 20px;">
+                    <label for="paymentId">Payment Confirmation *</label>
+                    <input type="text" id="paymentId" name="paymentId" required placeholder="Paste your Razorpay payment ID or transaction reference">
+                    <div class="help-text">After payment, paste the transaction ID here (e.g., pay_xxxxx or last 4 digits)</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="specialRequests">Any Special Requests? (Optional)</label>
+                    <textarea id="specialRequests" name="specialRequests" placeholder="e.g., Professional tone, include specific hashtags, mention certain points..."></textarea>
+                </div>
+
+                <button type="submit" class="btn">
+                    ✨ Submit Order
+                </button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                <h3>🎉 Order Received!</h3>
+                <p>Thank you! I'll send your LinkedIn post to <strong id="confirmEmail"></strong> within 2 hours (usually 30 minutes).</p>
+                <p style="margin-top: 15px;">Check your email inbox!</p>
+            </div>
+        </div>
+
+        <div class="main-card">
+            <h3 style="color: #667eea; margin-bottom: 15px;">❓ FAQ</h3>
+
+            <p><strong>Q: How fast will I get it?</strong><br>
+            A: Usually within 30 minutes, maximum 2 hours during business hours.</p>
+
+            <p style="margin-top: 15px;"><strong>Q: What if I don't like it?</strong><br>
+            A: I'll revise it once for free until you're happy!</p>
+
+            <p style="margin-top: 15px;"><strong>Q: Can you do multiple videos?</strong><br>
+            A: Yes! Get 5 videos for ₹1500 (60% off) - just mention it in special requests.</p>
+
+            <p style="margin-top: 15px;"><strong>Q: Do you work with any niche?</strong><br>
+            A: Yes! Tech, business, health, education, entertainment - all niches welcome.</p>
+
+            <p style="margin-top: 15px;"><strong>Q: Can you post it directly to my LinkedIn?</strong><br>
+            A: Yes, just select that option and I'll guide you through connecting your account.</p>
+        </div>
+
+        <footer>
+            <p>Built with ❤️ for content creators who want to maximize their reach</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Questions? Email: hameed@yourdomain.com</p>
+        </footer>
+    </div>
+
+    <script>
+        // Form submission handler
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                youtubeUrl: document.getElementById('youtubeUrl').value,
+                deliveryMethod: document.getElementById('deliveryMethod').value,
+                paymentId: document.getElementById('paymentId').value,
+                specialRequests: document.getElementById('specialRequests').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Send to Google Sheets or your email via FormSubmit.co
+            fetch('https://formsubmit.co/ajax/YOUR_EMAIL@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Show success message
+                document.getElementById('orderForm').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('confirmEmail').textContent = formData.email;
+            })
+            .catch(error => {
+                alert('Order submitted! Check your email for confirmation.');
+                document.getElementById('orderForm').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('confirmEmail').textContent = formData.email;
+            });
+        });
+    </script>
+</body>
+</html>
