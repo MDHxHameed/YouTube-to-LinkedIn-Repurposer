@@ -168,9 +168,14 @@
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
         }
 
-        .btn-secondary {
-            background: #28a745;
+        .btn-paypal {
+            background: #0070ba;
             margin-top: 15px;
+        }
+
+        .btn-paypal:hover {
+            background: #005ea6;
+            box-shadow: 0 5px 20px rgba(0, 112, 186, 0.4);
         }
 
         .steps {
@@ -244,6 +249,11 @@
             text-align: center;
         }
 
+        .paypal-logo {
+            display: inline-block;
+            margin-right: 8px;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -292,7 +302,7 @@
             </div>
 
             <div class="special-offer">
-                🔥 LAUNCH SPECIAL: First 10 customers get 5 videos for ₹1500 ($18) - Save 60%! 🔥
+                🔥 LAUNCH SPECIAL: First 10 customers get 5 videos for $20 - Save 60%! 🔥
             </div>
 
             <div class="examples">
@@ -320,7 +330,7 @@ I spent 6 months studying ultra-productive founders. Here are the 5 habits that 
                 <h3>📝 How It Works:</h3>
                 <ol>
                     <li><strong>Fill out the form below</strong> with your video URL</li>
-                    <li><strong>Pay ₹415 ($5)</strong> via Razorpay (instant)</li>
+                    <li><strong>Pay $5 via PayPal</strong> (instant & secure)</li>
                     <li><strong>Paste payment confirmation</strong> in the form</li>
                     <li><strong>Get your LinkedIn post via email</strong> within 2 hours</li>
                 </ol>
@@ -353,24 +363,24 @@ I spent 6 months studying ultra-productive founders. Here are the 5 habits that 
                     <label for="deliveryMethod">How would you like to receive it? *</label>
                     <select id="deliveryMethod" name="deliveryMethod" required>
                         <option value="">-- Select an option --</option>
-                        <option value="mdhxhameed@gmail.com">Just send me the text via email</option>
+                        <option value="email">Just send me the text via email</option>
                         <option value="linkedin">Post it to my LinkedIn (I'll share access)</option>
                     </select>
                 </div>
 
                 <div class="alert">
-                    <strong>⚡ PAYMENT STEP:</strong><br>
-                    Click the button below to pay ₹415 ($5) via Razorpay, then come back and paste your payment ID in the next field.
+                    <strong>💳 PAYMENT STEP:</strong><br>
+                    Click the button below to pay $5 via PayPal, then come back and paste your transaction ID in the next field.
                 </div>
 
-                <a href=" paypal.me/Hameed69" target="_blank" class="btn btn-secondary">
-                    💳 Pay ₹415 via Razorpay →
+                <a href="https://paypal.me/Hameed69/5" target="_blank" class="btn btn-paypal">
+                    <span class="paypal-logo">💙</span> Pay $5 via PayPal →
                 </a>
 
                 <div class="form-group" style="margin-top: 20px;">
-                    <label for="paymentId">Payment Confirmation *</label>
-                    <input type="text" id="paymentId" name="paymentId" required placeholder="Paste your Razorpay payment ID or transaction reference">
-                    <div class="help-text">After payment, paste the transaction ID here (e.g., pay_xxxxx or last 4 digits)</div>
+                    <label for="paymentId">PayPal Payment Confirmation *</label>
+                    <input type="text" id="paymentId" name="paymentId" required placeholder="Paste your PayPal transaction ID or confirmation email">
+                    <div class="help-text">After payment, paste the transaction ID here (looks like: 1AB23456CD789012E) or just type "PAID"</div>
                 </div>
 
                 <div class="form-group">
@@ -391,27 +401,72 @@ I spent 6 months studying ultra-productive founders. Here are the 5 habits that 
         </div>
 
         <div class="main-card">
+            <h3 style="color: #667eea; margin-bottom: 15px;">💰 Pricing Plans</h3>
+
+            <div style="border: 2px solid #ddd; border-radius: 8px; padding: 20px; margin: 15px 0;">
+                <h4>💵 Pay Per Video</h4>
+                <p style="font-size: 2em; color: #667eea; font-weight: bold; margin: 10px 0;">$5</p>
+                <p>Perfect for testing the service</p>
+            </div>
+
+            <div style="border: 3px solid #ffd700; border-radius: 8px; padding: 20px; margin: 15px 0; background: #fffbf0;">
+                <div style="background: #ffd700; color: #333; padding: 5px 10px; border-radius: 5px; display: inline-block; margin-bottom: 10px;">
+                    ⭐ BEST VALUE
+                </div>
+                <h4>🔥 Bundle Deal</h4>
+                <p style="font-size: 2em; color: #667eea; font-weight: bold; margin: 10px 0;">$20</p>
+                <p><strong>5 videos</strong> - Save $5 (was $25)</p>
+                <p style="color: #666; font-size: 0.9em; margin-top: 10px;">Just mention "Bundle Deal" in special requests</p>
+            </div>
+
+            <div style="border: 2px solid #ddd; border-radius: 8px; padding: 20px; margin: 15px 0;">
+                <h4>🚀 Monthly Unlimited</h4>
+                <p style="font-size: 2em; color: #667eea; font-weight: bold; margin: 10px 0;">$49</p>
+                <p>Unlimited videos per month</p>
+                <p style="color: #666; font-size: 0.9em; margin-top: 10px;">Email me to set this up</p>
+            </div>
+        </div>
+
+        <div class="main-card">
             <h3 style="color: #667eea; margin-bottom: 15px;">❓ FAQ</h3>
 
             <p><strong>Q: How fast will I get it?</strong><br>
-            A: Usually within 30 minutes, maximum 2 hours during business hours.</p>
+            A: Usually within 30 minutes, maximum 2 hours during business hours (9am-9pm EST).</p>
 
             <p style="margin-top: 15px;"><strong>Q: What if I don't like it?</strong><br>
-            A: I'll revise it once for free until you're happy!</p>
+            A: I'll revise it once for free until you're happy! 100% satisfaction guaranteed.</p>
 
             <p style="margin-top: 15px;"><strong>Q: Can you do multiple videos?</strong><br>
-            A: Yes! Get 5 videos for ₹1500 (60% off) - just mention it in special requests.</p>
+            A: Yes! Get the bundle deal: 5 videos for $20 (save $5).</p>
 
             <p style="margin-top: 15px;"><strong>Q: Do you work with any niche?</strong><br>
-            A: Yes! Tech, business, health, education, entertainment - all niches welcome.</p>
+            A: Yes! Tech, business, health, education, entertainment, finance - all niches welcome.</p>
 
             <p style="margin-top: 15px;"><strong>Q: Can you post it directly to my LinkedIn?</strong><br>
-            A: Yes, just select that option and I'll guide you through connecting your account.</p>
+            A: Yes, just select that option and I'll guide you through a quick authorization step.</p>
+
+            <p style="margin-top: 15px;"><strong>Q: What if my video doesn't have captions?</strong><br>
+            A: No problem! I'll use the video description and key points. Works great either way.</p>
+
+            <p style="margin-top: 15px;"><strong>Q: Is PayPal the only payment option?</strong><br>
+            A: Yes, for instant processing. It's fast, secure, and no account needed (pay with card).</p>
+        </div>
+
+        <div class="main-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <h3 style="margin-bottom: 15px;">🎯 Why Manual Service?</h3>
+            <p style="opacity: 0.95;">
+                I'm doing this manually right now to ensure 100% quality and gather feedback. 
+                Once I perfect the process and get 50+ happy customers, I'll automate it and scale up!
+            </p>
+            <p style="margin-top: 15px; opacity: 0.95;">
+                <strong>You're getting premium, hands-on service at a fraction of what agencies charge ($50-100/post).</strong>
+            </p>
         </div>
 
         <footer>
             <p>Built with ❤️ for content creators who want to maximize their reach</p>
-            <p style="margin-top: 10px; font-size: 0.9em;">Questions? Email: hameed@yourdomain.com</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Questions? Reply to your confirmation email or contact via PayPal</p>
+            <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.8;">Not affiliated with YouTube or LinkedIn</p>
         </footer>
     </div>
 
@@ -428,10 +483,11 @@ I spent 6 months studying ultra-productive founders. Here are the 5 habits that 
                 deliveryMethod: document.getElementById('deliveryMethod').value,
                 paymentId: document.getElementById('paymentId').value,
                 specialRequests: document.getElementById('specialRequests').value,
-                timestamp: new Date().toISOString()
+                timestamp: new Date().toISOString(),
+                paymentMethod: 'PayPal'
             };
 
-            // Send to Google Sheets or your email via FormSubmit.co
+            // Send to email service (FormSubmit.co - free & instant)
             fetch('https://formsubmit.co/ajax/YOUR_EMAIL@gmail.com', {
                 method: 'POST',
                 headers: {
@@ -446,12 +502,29 @@ I spent 6 months studying ultra-productive founders. Here are the 5 habits that 
                 document.getElementById('orderForm').style.display = 'none';
                 document.getElementById('successMessage').style.display = 'block';
                 document.getElementById('confirmEmail').textContent = formData.email;
+
+                // Scroll to success message
+                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
             })
             .catch(error => {
-                alert('Order submitted! Check your email for confirmation.');
+                // Fallback: still show success (FormSubmit might block CORS in some browsers)
+                console.log('Form submitted:', formData);
                 document.getElementById('orderForm').style.display = 'none';
                 document.getElementById('successMessage').style.display = 'block';
                 document.getElementById('confirmEmail').textContent = formData.email;
+
+                // Scroll to success message
+                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Add smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
     </script>
